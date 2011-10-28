@@ -1,0 +1,21 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3790
+
+
+vim plugins for hi-speed programming.
+It use templates. To add some hints, and select template, you can see the
+code to work.
+
+There is a movie using sonictemplate.vim
+ref: http://mattn.github.com/sonictemplate-vim
+
+Source Repository.
+ref: http://github.com/mattn/sonictemplate-vim
+
+If you want to change templat directory, set:
+
+  let g:template_vim_template_dir = '/path/to/your/template/directory'
+
+If you want to write template for your self, see
+
+  :help sonictemplate
+
