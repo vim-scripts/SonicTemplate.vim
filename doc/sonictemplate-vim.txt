@@ -13,11 +13,11 @@ License: BSD style license
 ==============================================================================
 CONTENTS                                           *sonictemplate-vim-contents*
 
-Introduction           |sonictemplate-introduction|
-Install                |sonictemplate-install|
-Tutorial               |sonictemplate-tutorial|
-Customize              |sonictemplate-customize|
-Write Your Template    |sonictemplate-writetemplate|
+Introduction           |sonictemplate-vim-introduction|
+Install                |sonictemplate-vim-install|
+Tutorial               |sonictemplate-vim-tutorial|
+Customize              |sonictemplate-vim-customize|
+Write Your Template    |sonictemplate-vim-writetemplate|
 
 ==============================================================================
 INTRODUCTION                                   *sonictemplate-vim-introduction*
@@ -107,10 +107,30 @@ For example, you are writing C++ file.
 ==============================================================================
 CUSTOMIZE                                         *sonictemplate-vim-customize*
 
-You can modify template directory for your-self templates. 
->
-  let g:template_vim_template_dir = '/path/to/your/template/directory'
+You can modify template directory for your-self templates: >
+  let g:sonictemplate_vim_template_dir = '/path/to/your/template/directory'
 <
+  or >
+
+  let g:sonictemplate_vim_template_dir = [
+  \ '$HOME/.vim/template',
+  \ '/path/to/another/template/directory'
+  \]
+<
+You can override default template to make same structures. For example, a
+default C language template 'main' is like following.
+>
+  #include <stdio.h>
+  
+  int
+  main(int argc, char* argv[]) {
+      {{_cursor_}}
+      return 0;
+  }
+
+This template is stored in 'sonictemplate-vim/template/c/base-main.c'.
+If you store base-main.c in another template directory that is specified
+|g:sonictemplate_vim_template_dir|, it will be overrided with your's one.
 ==============================================================================
 WRITE YOUR TEMPLATE                           *sonictemplate-vim-writetemplate*
 
